@@ -1,0 +1,41 @@
+{
+  "name": "@feizheng/next-tree-walk",
+  "version": "1.0.0",
+  "description": "Tree data walker.",
+  "homepage": "https://github.com/afeiship/next-tree-walk",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "scripts": {
+    "build": "gulp",
+    "test": "jest",
+    "start": "node ./express.js"
+  },
+  "main": "dist/next-tree-walk.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@feizheng/next-nice-comments": "^1.0.0",
+    "@feizheng/rake-git": "^1.2.0",
+    "del": "^2.2.1",
+    "gulp": "^4.0.2",
+    "gulp-debug": "^4.0.0",
+    "gulp-header": "^2.0.7",
+    "gulp-ignore": "^2.0.2",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^2.1.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.14.3",
+    "uglify-save-license": "^0.4.1",
+    "yargs": "^4.7.1"
+  },
+  "dependencies": {
+    "@feizheng/next-js-core2": "^2.0.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
