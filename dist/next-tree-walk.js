@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree-walk
  * url: https://github.com/afeiship/next-tree-walk
- * version: 1.0.1
- * date: 2019-11-28T09:06:38.633Z
+ * version: 1.0.2
+ * date: 2020-02-15T11:16:13.407Z
  * license: MIT
  */
 
