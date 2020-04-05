@@ -5,11 +5,10 @@ var items = require('./fixtures/menu.json');
 var items2 = require('./fixtures/menu2.json');
 
 describe('api.basic test', () => {
-  test.only('nx.treeWalk comman case:', function() {
+  test('nx.treeWalk comman case:', function () {
     var html = '';
     nx.treeWalk(items, {
       template: ({ item, independent }, cb) => {
-        console.log('indpendent:', independent);
         html += `<li>${item.label}</li>`;
         cb();
       }
@@ -20,7 +19,7 @@ describe('api.basic test', () => {
     );
   });
 
-  test('nx.treeWalk itemsKey:', function() {
+  test('nx.treeWalk itemsKey:', function () {
     var html = '';
     nx.treeWalk(items2, {
       itemsKey: (index, item) => {
