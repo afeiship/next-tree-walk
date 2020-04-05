@@ -36,6 +36,7 @@
         return options.template.call(this, target, callback);
       });
     };
+
     return walk(inItems);
   };
 
