@@ -3,7 +3,7 @@
  * description: Tree data walker.
  * url: https://github.com/afeiship/next-tree-walk
  * version: 1.0.5
- * date: 2020-04-05 23:33:01
+ * date: 2020-04-05 23:39:44
  * license: MIT
  */
 
