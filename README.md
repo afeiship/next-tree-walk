@@ -15,7 +15,20 @@ npm install -S @feizheng/next-tree-walk
 ```js
 import '@feizheng/next-tree-walk';
 
-//DOCS here!
+class MyComponent extends React.Component{
+  get childView(){
+    const { items, itemsKey, template } = this.props;
+    return nx.treeWalk(items, { template, 'children' });
+  }
+
+  render(){
+    return (
+      <div>
+        {this.childView}
+      </div>
+    )
+  }
+}
 ```
 
 ## license

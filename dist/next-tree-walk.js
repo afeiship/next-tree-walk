@@ -2,8 +2,8 @@
  * name: @feizheng/next-tree-walk
  * description: Tree data walker.
  * homepage: https://github.com/afeiship/next-tree-walk
- * version: 1.0.6
- * date: 2020-09-02T11:09:05.445Z
+ * version: 1.0.7
+ * date: 2020-09-02T11:09:53.553Z
  * license: MIT
  */
 
