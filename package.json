@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/next-tree-walk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Tree data walker.",
   "homepage": "https://github.com/afeiship/next-tree-walk",
   "author": {
@@ -15,7 +15,8 @@
   "main": "dist/next-tree-walk.js",
   "license": "MIT",
   "devDependencies": {
-    "@feizheng/gulp-pkg-header": "^1.0.2",
+    "@feizheng/gulp-pkg-header": "^1.0.4",
+    "@feizheng/next-js-core2": "^2.6.0",
     "@feizheng/rake-git": "^1.2.1",
     "del": "^5.1.0",
     "express": "^4.17.1",
@@ -23,20 +24,17 @@
     "gulp-debug": "^4.0.0",
     "gulp-header": "^2.0.9",
     "gulp-ignore": "^3.0.0",
-    "gulp-load-plugins": "^2.0.2",
+    "gulp-load-plugins": "^2.0.3",
     "gulp-rename": "^2.0.0",
     "gulp-size": "^3.0.0",
-    "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "jest": "^25.2.3",
-    "prettier": "^2.0.2",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "uglify-js": "3.10.0",
     "uglify-save-license": "^0.4.1",
-    "yargs": "^15.3.1"
-  },
-  "dependencies": {
-    "@feizheng/next-js-core2": "^2.4.4"
+    "yargs": "^15.4.0"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org"
   }
 }

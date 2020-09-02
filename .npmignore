@@ -6,6 +6,7 @@ test
 __tests__
 src
 build
+docs
 gulpfile.js
 
 .editorconfig
@@ -16,3 +17,7 @@ LICENSE.txt
 Rakefile
 express.js
 .vscode
+
+
+# vscode localhistory
+.history

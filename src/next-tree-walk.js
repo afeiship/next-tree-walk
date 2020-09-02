@@ -1,12 +1,10 @@
 (function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
-  /* prettier-ignore */
-  var RETURN_VALUE = function (inValue) { return inValue; };
   var FUNC = 'function';
   var DEFAULT_OPTIONS = {
     template: nx.noop,
-    callback: RETURN_VALUE,
+    callback: nx.stubValue,
     itemsKey: 'children'
   };
 
@@ -31,6 +29,7 @@
         var target = options.callback({
           item: item,
           index: index,
+          parent: items,
           independent: independent
         });
         return options.template.call(this, target, callback);

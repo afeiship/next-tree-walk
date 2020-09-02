@@ -1,21 +1,19 @@
 /*!
  * name: @feizheng/next-tree-walk
  * description: Tree data walker.
- * url: https://github.com/afeiship/next-tree-walk
- * version: 1.0.5
- * date: 2020-04-05 23:39:44
+ * homepage: https://github.com/afeiship/next-tree-walk
+ * version: 1.0.6
+ * date: 2020-09-02T11:09:05.445Z
  * license: MIT
  */
 
 (function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
-  /* prettier-ignore */
-  var RETURN_VALUE = function (inValue) { return inValue; };
   var FUNC = 'function';
   var DEFAULT_OPTIONS = {
     template: nx.noop,
-    callback: RETURN_VALUE,
+    callback: nx.stubValue,
     itemsKey: 'children'
   };
 
@@ -40,6 +38,7 @@
         var target = options.callback({
           item: item,
           index: index,
+          parent: items,
           independent: independent
         });
         return options.template.call(this, target, callback);
@@ -53,5 +52,3 @@
     module.exports = nx.treeWalk;
   }
 })();
-
-//# sourceMappingURL=next-tree-walk.js.map
