@@ -2,8 +2,8 @@
  * name: @feizheng/next-tree-walk
  * description: Tree data walker.
  * homepage: https://github.com/afeiship/next-tree-walk
- * version: 1.0.7
- * date: 2020-09-02T11:09:53.553Z
+ * version: 1.0.8
+ * date: 2020-09-04T08:00:04.068Z
  * license: MIT
  */
 
@@ -24,7 +24,7 @@
       typeof itemsKey === FUNC
         ? itemsKey
         : function (_, item) {
-            return item[itemsKey];
+            return nx.get(item, itemsKey);
           };
 
     var walk = function (items) {
@@ -38,7 +38,7 @@
         var target = options.callback({
           item: item,
           index: index,
-          parent: items,
+          children: children,
           independent: independent
         });
         return options.template.call(this, target, callback);

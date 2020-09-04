@@ -15,7 +15,7 @@
       typeof itemsKey === FUNC
         ? itemsKey
         : function (_, item) {
-            return item[itemsKey];
+            return nx.get(item, itemsKey);
           };
 
     var walk = function (items) {
@@ -29,7 +29,7 @@
         var target = options.callback({
           item: item,
           index: index,
-          parent: items,
+          children: children,
           independent: independent
         });
         return options.template.call(this, target, callback);
