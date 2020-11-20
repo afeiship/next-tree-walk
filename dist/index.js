@@ -1,15 +1,15 @@
 /*!
- * name: @feizheng/next-tree-walk
+ * name: @jswork/next-tree-walk
  * description: Tree data walker.
  * homepage: https://github.com/afeiship/next-tree-walk
- * version: 1.0.8
- * date: 2020-09-04T08:00:04.068Z
+ * version: 1.0.0
+ * date: 2020-11-20 13:10:00
  * license: MIT
  */
 
 (function () {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@feizheng/next-js-core2');
+  var nx = global.nx || require('@jswork/next');
   var FUNC = 'function';
   var DEFAULT_OPTIONS = {
     template: nx.noop,
