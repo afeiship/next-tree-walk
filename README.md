@@ -18,7 +18,7 @@ import '@jswork/next-tree-walk';
 class MyComponent extends React.Component{
   get childView(){
     const { items, itemsKey, template } = this.props;
-    return nx.treeWalk(items, { template, 'children' });
+    return nx.treeWalk(items, { template, itemsKey: 'children' });
   }
 
   render(){
