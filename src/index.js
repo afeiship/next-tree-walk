@@ -11,6 +11,7 @@
   nx.treeWalk = function (inItems, inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
     var itemsKey = options.itemsKey;
+    var level = -1;
     var itemsGetter =
       typeof itemsKey === FUNC
         ? itemsKey
@@ -19,6 +20,7 @@
           };
 
     var walk = function (items) {
+      level = level + 1;
       return items.map(function (item, index) {
         var children = itemsGetter(index, item, items);
         var cb = function () {
@@ -30,7 +32,8 @@
           item: item,
           index: index,
           children: children,
-          independent: independent
+          independent: independent,
+          level: level
         });
         return options.template.call(this, target, callback);
       });

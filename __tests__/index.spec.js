@@ -8,7 +8,9 @@
     test('nx.treeWalk comman case:', function () {
       let html = '';
       nx.treeWalk(items, {
-        template: ({ item, independent }, cb) => {
+        template: ({ item, independent, level }, cb) => {
+
+          console.log(level);
           html += `<li>${item.label}</li>`;
           cb();
         }
