@@ -5,7 +5,7 @@ interface TreeWalkOption {
 }
 
 interface NxStatic {
-  treeWalk: (items: any[], options?: TreeWalkOption[]) => any;
+  treeWalk: (items: any[], options?: TreeWalkOption) => any;
 }
 
-export default function treeWalk(items: any[], options?: TreeWalkOption[]): any;
+export default function treeWalk(items: any[], options?: TreeWalkOption): any;
