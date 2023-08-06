@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-tree-walk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Tree data walker.",
   "homepage": "https://js.work",
   "author": {
@@ -43,5 +43,12 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "keywords": [
+    "next",
+    "tree",
+    "walk",
+    "loop",
+    "recursive"
+  ]
 }
