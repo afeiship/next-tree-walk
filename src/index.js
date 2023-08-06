@@ -17,16 +17,17 @@ nx.treeWalk = function (inItems, inOptions) {
           return nx.get(item, itemsKey);
         };
 
-  const walk = function (items, level) {
+  const walk = function (items, level, parent) {
     const depth = level + 1;
     return items.map(function (item, index) {
       const children = itemsGetter(index, item, items);
-      const cb = () => walk(children, depth);
+      const cb = () => walk(children, depth, parent);
       const independent = !(children && children.length);
       const callback = independent ? nx.noop : cb;
       const target = options.callback({
         item,
         index,
+        parent,
         children,
         independent,
         depth
@@ -35,7 +36,7 @@ nx.treeWalk = function (inItems, inOptions) {
     });
   };
 
-  return walk(inItems, -1);
+  return walk(inItems, -1, null);
 };
 
 if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
