@@ -1,47 +1,45 @@
-(function () {
-  var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@jswork/next');
-  var FUNC = 'function';
-  var DEFAULT_OPTIONS = {
-    template: nx.noop,
-    callback: nx.stubValue,
-    itemsKey: 'children'
-  };
+import nx from '@jswork/next';
 
-  nx.treeWalk = function (inItems, inOptions) {
-    var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
-    var itemsKey = options.itemsKey;
-    var itemsGetter =
-      typeof itemsKey === FUNC
-        ? itemsKey
-        : function (_, item) {
-            return nx.get(item, itemsKey);
-          };
+const FUNC = 'function';
+const defaults = {
+  template: nx.noop,
+  callback: nx.stubValue,
+  itemsKey: 'children'
+};
 
-    var walk = function (items, level) {
-      var depth = level + 1;
-      return items.map(function (item, index) {
-        var children = itemsGetter(index, item, items);
-        var cb = function () {
-          return walk(children, depth);
+nx.treeWalk = function (inItems, inOptions) {
+  const options = nx.mix(null, defaults, inOptions);
+  const itemsKey = options.itemsKey;
+  const itemsGetter =
+    typeof itemsKey === FUNC
+      ? itemsKey
+      : function (_, item) {
+          return nx.get(item, itemsKey);
         };
-        var independent = !(children && children.length);
-        var callback = independent ? nx.noop : cb;
-        var target = options.callback({
-          item: item,
-          index: index,
-          children: children,
-          independent: independent,
-          depth: depth
-        });
-        return options.template.call(this, target, callback);
-      });
-    };
 
-    return walk(inItems, -1);
+  const walk = function (items, level) {
+    const depth = level + 1;
+    return items.map(function (item, index) {
+      const children = itemsGetter(index, item, items);
+      const cb = () => walk(children, depth);
+      const independent = !(children && children.length);
+      const callback = independent ? nx.noop : cb;
+      const target = options.callback({
+        item,
+        index,
+        children,
+        independent,
+        depth
+      });
+      return options.template.call(this, target, callback);
+    });
   };
 
-  if (typeof module !== 'undefined' && module.exports) {
-    module.exports = nx.treeWalk;
-  }
-})();
+  return walk(inItems, -1);
+};
+
+if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+  module.exports = nx.treeWalk;
+}
+
+export default nx.treeWalk;
