@@ -1,4 +1,4 @@
-require('../src');
+import '../src';
 
 const items = require('./fixtures/menu.json');
 const items2 = require('./fixtures/menu2.json');

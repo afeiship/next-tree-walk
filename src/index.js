@@ -39,8 +39,8 @@ nx.treeWalk = function (inItems, inOptions) {
   return walk(inItems, -1, null);
 };
 
-if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
-  module.exports = nx.treeWalk;
-}
+// if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+//   module.exports = nx.treeWalk;
+// }
 
 export default nx.treeWalk;
